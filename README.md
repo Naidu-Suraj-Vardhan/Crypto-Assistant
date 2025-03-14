@@ -31,10 +31,10 @@ The simplest way to run the application is using Docker:
 docker build -t crypto-assistant .
 
 # Run the container
-docker run -p 7860:7860 --env-file .env crypto-assistant
+docker run -p 8000:8000 --env-file .env crypto-assistant
 ```
 
-Then visit `http://localhost:7860` in your browser.
+Then visit `http://localhost:8000` in your browser.
 
 ### Manual Installation
 
