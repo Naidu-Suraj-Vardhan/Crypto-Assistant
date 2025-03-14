@@ -1,0 +1,6 @@
+together==0.1.5
+pydantic>=2.0.0
+python-dotenv==1.0.0
+requests==2.31.0
+langdetect==1.0.9
+gradio==4.19.2

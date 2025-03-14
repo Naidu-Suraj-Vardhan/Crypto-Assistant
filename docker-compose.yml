@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  crypto-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7860:7860"
+    env_file:
+      - .env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=7860
+      - DEBUG=false
+      - SHARE=false
+      # Override MODEL if needed:
+      # - MODEL=meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo
+    restart: unless-stopped
+    volumes:
+      - cache-data:/app/cache
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  cache-data:
